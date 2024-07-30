@@ -48,7 +48,7 @@
   chatWidget.style.left = '50%'; // Center horizontally
   chatWidget.style.transform = 'translate(-50%, -50%)'; // Adjust position to center
   chatWidget.style.width = '300px';
-  chatWidget.style.height = '1000px';
+  chatWidget.style.height = '1200px';
   chatWidget.style.maxHeight = '400px';
   chatWidget.style.zIndex = '1001';
   chatWidget.style.border = '1px solid #2d3748';
@@ -62,12 +62,12 @@
 
   chatWidget.innerHTML = `
   <div id="chat-header" style="background-color: #F06D45; color: black; padding: 10px; text-align: center; font-size: 1.5em;">
-    <img src="assets/startup.png" alt="StartUp India" style="width: 200px; height: 40px;"> 
+    <img src="assets/startup.png" alt="StartUp India" style="width: 200px; height: 20px;"> 
   </div>
   <div id="chat-messages" style="height: 70%; overflow-y: auto; padding: 10px;"></div>
   <div style="padding: 10px; display: flex; align-items: center; background-color: #00000;">
     <input type="text" id="chat-input" style="flex: 1; padding: 15px; border: none; border-radius: 20px; background-color: #0B031E; color: #fff; outline: none; font-size: 0.8em;" placeholder="Let the magic begin, Ask a question." />
-    <button id="chat-send" style="margin-left: 10px; background-color: black; color: black; border: none; border-radius: 50%; width: 10vw; height: 10vw; max-width: 40px; max-height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 1em;">
+    <button id="chat-send" style="margin-left: 10px; background-color: black; color: white; border: none; border-radius: 50%; width: 10vw; height: 10vw; max-width: 40px; max-height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-size: 1em;">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff" width="30" height="30">
         <path d="M2 21l21-9L2 3v7l15 2-15 2z"></path>
       </svg>
@@ -244,7 +244,6 @@
           "botId": "66a15ce4ae91c5d6e81f9b61"
         })
       });
-
       const data = await response.json();
       if (data && data.chats && data.chats.length > 0) {
         const botResponse = formatBotResponse(data.chats[data.chats.length - 1].answer);
