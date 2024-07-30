@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #2e2e2e, #333);
+}
+
+.infinite {
+    position: relative;
+    width: 800px;
+    height: 160px;
+    background: #525252;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateX(30deg);
+}
+
+.infinite::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, #fff 0%, #fff 70%, #525252 70%, #525252 100%);
+    background-size: 120px;
+    animation: animateRoad 1s linear infinite;
+}
+
+@keyframes animateRoad {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -120px;
+    }
+}
+
+.infinite::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background: #333;
+    bottom: -30px;
+    transform-origin: top;
+    transform: perspective(500px) rotateX(-25deg);
+}
+
+.shadow {
+    position: absolute;
+    width: 95%;
+    height: 60px;
+    left: 50%;
+    bottom: -93px;
+    transform: translateX(-50%);
+    background: linear-gradient(rgba(0, 0, 0, 0.25), transparent);
+}
+
+#runningMan {
+    position: absolute;
+    width: 50px; /* Adjust the size of the GIF as needed */
+    bottom: 30px; /* Adjust this value to position the GIF on the road */
+    left: 0; /* Start at the beginning of the road */
+}
+
+.hurdle {
+    position: absolute;
+    bottom: 30px; /* Same as the running man to be on the road */
+    padding: 10px; /* Add padding for better appearance */
+    background: red; /* Color for hurdles */
+    color: white; /* Text color for hurdles */
+    border-radius: 5px; /* Rounded corners for hurdles */
+    font-weight: bold; /* Bold text */
+}
+
+.goal {
+    position: absolute;
+    bottom: 30px; /* Same as the running man to be on the road */
+    width: 80px; /* Wider for the goal */
+    height: 40px; /* Taller for the goal */
+    background: green; /* Color for goal */
+    color: white; /* Text color for the goal */
+    border-radius: 5px; /* Rounded corners for the goal */
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    font-weight: bold; /* Bold text */
+    text-align: center;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.know-more {
+    padding: 12px 23px; /* Same padding as other buttons */
+    margin-bottom: 10px; /* Same margin as other buttons */
+    margin-top: 20px; 
+    background: #0B031E; 
+    color: #fff; /* Text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Font size */
+    font-weight: 600; /* Font weight */
+    text-transform: uppercase; /* Uppercase text */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.know-more:hover {
+    background: #8286c9; /* Change background color on hover */
+}
+
+.chat-container {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
